@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Adventure of Michael</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #2b5876, #4e4376);
+      color: white;
+      text-align: center;
+      padding: 2em;
+    }
+    .section {
+      margin: 50px auto;
+      padding: 2em;
+      max-width: 700px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+    .btn {
+      background-color: #ff6b81;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 1em;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #ff4757;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section" id="intro">
+    <h1>Welcome to Michael's Adventure!</h1>
+    <p>Michael wakes up in a strange land... glowing mushrooms, floating islands, and a map in his pocket. What does he do?</p>
+    <button class="btn" onclick="goToSection('path1')">Follow the Map</button>
+    <button class="btn" onclick="goToSection('path2')">Explore the Forest</button>
+  </div>
+
+  <div class="section" id="path1" style="display: none;">
+    <h2>Following the Map</h2>
+    <p>Michael follows the map and stumbles across a shimmering cave with ancient runes. A riddle is etched above the entrance.</p>
+    <p>"Only the one who knows their heart may enter."</p>
+    <button class="btn" onclick="goToSection('path3')">Solve the Riddle</button>
+  </div>
+
+  <div class="section" id="path2" style="display: none;">
+    <h2>Exploring the Forest</h2>
+    <p>He meets a talking owl who offers to grant him one wish—but warns that all wishes come with a price.</p>
+    <button class="btn" onclick="goToSection('path4')">Make a Wish</button>
+    <button class="btn" onclick="goToSection('path1')">Ask for Directions</button>
+  </div>
+
+  <div class="section" id="path3" style="display: none;">
+    <h2>The Cave of Truth</h2>
+    <p>The door opens, and Michael walks into a realm of memories. He must choose one moment to relive and change.</p>
+    <button class="btn" onclick="goToSection('ending1')">Change the Past</button>
+    <button class="btn" onclick="goToSection('ending2')">Accept the Past</button>
+  </div>
+
+  <div class="section" id="path4" style="display: none;">
+    <h2>The Owl's Bargain</h2>
+    <p>Michael wishes for wisdom. In an instant, his hair turns silver and he understands the language of the stars.</p>
+    <button class="btn" onclick="goToSection('ending3')">Use Wisdom to Guide Others</button>
+  </div>
+
+  <div class="section" id="ending1" style="display: none;">
+    <h2>Ending: Rewrite</h2>
+    <p>Michael changes a single moment—and wakes up in a new timeline. Different, yet familiar. A second chance begins.</p>
+  </div>
+
+  <div class="section" id="ending2" style="display: none;">
+    <h2>Ending: Peace</h2>
+    <p>He walks out of the cave with clarity. The weight is gone. The world seems brighter, and he is finally free.</p>
+  </div>
+
+  <div class="section" id="ending3" style="display: none;">
+    <h2>Ending: The Sage</h2>
+    <p>Michael becomes a guide to travelers who lose their way. The owl watches from above, proud of his choice.</p>
+  </div>
+
+  <script>
+    function goToSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
